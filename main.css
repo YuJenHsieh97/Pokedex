@@ -1,0 +1,16 @@
+body{
+  background-image: url(https://free4kwallpapers.com/no-watermarks/originals/2018/06/18/created-a-3d-render-of-a-pokemon-trophy-in-the-grass-wallpaper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1{
+  text-align: center;
+  background: -webkit-linear-gradient(gold, lightblue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p{
+  text-align: center;
+}
