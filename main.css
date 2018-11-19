@@ -13,12 +13,13 @@ h1{
 
 div{
   text-align: center;
+  text-transform: capitalize;
 }
 
-/* button{
-  margin-left: 20%;
-  margin-top:25%;
-} */
+button{
+  background-color: inherit;
+  color: white;
+}
 
 #pb{
   margin-left: 20%;
