@@ -15,7 +15,25 @@ div{
   text-align: center;
 }
 
-button{
+/* button{
   margin-left: 20%;
   margin-top:25%;
+} */
+
+#pb{
+  margin-left: 20%;
+  margin-top:25%;
+  position: absolute;
+}
+
+#sb{
+  margin-left: 40%;
+  margin-top:25%;
+  position: absolute;
+}
+
+#mb{
+  margin-left: 60%;
+  margin-top:25%;
+  position: absolute;
 }

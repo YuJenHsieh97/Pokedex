@@ -1,4 +1,5 @@
 console.log('🥖🥖');
+
 class Pokemon{
   constructor(name,hp,attack,defense,abilities){
     this.hp = hp;
@@ -12,7 +13,7 @@ class Pokemon{
   }
 
   display(){
-    let pokeinfo = document.createElement("ol");
+    pokeinfo = document.createElement("ol");
     pokeinfo.innerHTML = [this.name,"HP: " + this.hp,"Attack: " + this.attack,"Defense: " + this.defense,"Abilities:" + this.ability];
     this.element.appendChild(pokeinfo);
     this.container.appendChild(this.element);
@@ -30,9 +31,14 @@ function pika(){
     .then(function(response){
 
       let abi = response.data.abilities;
+      let all1 = [];
       for(let i=0;i<abi.length;i++){
-        let all1 = [];
         all1.push(abi[i].ability.name);
+      }
+
+      let concatenate = "";
+      for(let i=0;i<abi.length;i++){
+        concatenate +=all1[i] + " ,";
       }
 
       let name = "Pikachu";
@@ -43,7 +49,7 @@ function pika(){
 
       let defense = response.data.stats[3].base_stat;
 
-      let pikk = new Pokemon(name,hp,attack,defense,abi);
+      let pikk = new Pokemon(name,hp,attack,defense,concatenate);
 
       document.getElementById('mb').style.display = "none";
       document.getElementById('sb').style.display = "none";
@@ -56,12 +62,17 @@ function pika(){
 function mew(){
   let mew ="http://fizal.me/pokeapi/api/v2/name/mewtwo.json";
     axios.get(mew)
-
     .then(function mew(response){
+
       let abi2 = response.data.abilities;
+      let all2 = [];
       for(let i=0;i<abi2.length;i++){
-        let all2 = [];
         all2.push(abi2[i].ability.name);
+      }
+
+      let concatenate = "";
+      for(let i=0;i<abi2.length;i++){
+        concatenate +=all2[i] + " ,";
       }
 
       let name = "Mewtwo";
@@ -72,7 +83,7 @@ function mew(){
 
       let defense = response.data.stats[3].base_stat;
 
-      let mew = new Pokemon(name,hp,attack,defense,abi2);
+      let mew = new Pokemon(name,hp,attack,defense,concatenate);
 
       document.getElementById('pb').style.display = "none";
       document.getElementById('sb').style.display = "none";
@@ -87,10 +98,16 @@ function snor(){
 
     .then(function snor(response){
       let abi3 = response.data.abilities;
+      let all3 = [];
       for(let i=0;i<abi3.length;i++){
-        let all3 = [];
         all3.push(abi3[i].ability.name);
       }
+
+      let concatenate = "";
+      for(let i=0;i<abi3.length;i++){
+        concatenate +=all3[i] + " ,";
+      }
+
 
       let name ="Snorlax";
 
@@ -100,7 +117,7 @@ function snor(){
 
       let defense= response.data.stats[3].base_stat;
 
-      let snor = new Pokemon(name,hp,attack,defense,abi3);
+      let snor = new Pokemon(name,hp,attack,defense,concatenate);
 
       document.getElementById('mb').style.display = "none";
       document.getElementById('pb').style.display = "none";
@@ -113,14 +130,12 @@ function snor(){
       document.getElementById('pb').style.display = "initial";
       document.getElementById('mb').style.display = "initial";
       document.getElementById('sb').style.display = "initial";
-      snor.style.display = "none";
-      pikk.style.display = "none";
-      mew.style.display = "none";
-    }
+      pokeinfo.style.display = "none";
+  }
 
     mb.addEventListener('click', mew);
-    mb.addEventListener("mouseout", main);
+    mb.addEventListener("mouseleave", main);
     sb.addEventListener('click', snor);
-    sb.addEventListener("mouseout", main);
+    sb.addEventListener("mouseleave", main);
     pb.addEventListener('click', pika);
-    pb.addEventListener("mouseout", main);
+    pb.addEventListener("mouseleave", main);
