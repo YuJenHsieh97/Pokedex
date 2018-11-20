@@ -10,7 +10,10 @@ h1{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+img{
+  width:300px;
+  height:300px;
+}
 div{
   text-align: center;
   text-transform: capitalize;
@@ -23,18 +26,61 @@ button{
 
 #pb{
   margin-left: 20%;
-  margin-top:25%;
+  margin-top:30%;
   position: absolute;
+  width:10vh;
+  height:10vh;
+  text-transform: capitalize
 }
 
 #sb{
   margin-left: 40%;
-  margin-top:25%;
+  margin-top:30%;
   position: absolute;
+  width:10vh;
+  height:10vh;
+  text-transform: capitalize
 }
 
 #mb{
   margin-left: 60%;
-  margin-top:25%;
+  margin-top:30%;
   position: absolute;
+  width:10vh;
+  height:10vh;
+  text-transform: capitalize
 }
+
+#allpoke{
+  color:black;
+  font-size:30px;
+ }
+
+ #trainer{
+   width:30vh;
+   height:30vh;
+ }
+
+ .pokeBall:hover{
+   animation: shake;
+   animation-duration: 3s;
+   animation-iteration-count: infinite;
+ }
+
+ @keyframes shake {
+   10%, 90% {
+   transform: translate3d(-1px, 0, 0);
+ }
+
+ 20%, 80% {
+   transform: translate3d(2px, 0, 0);
+ }
+
+ 30%, 50%, 70% {
+   transform: translate3d(-4px, 0, 0);
+ }
+
+ 40%, 60% {
+   transform: translate3d(4px, 0, 0);
+ }
+ }

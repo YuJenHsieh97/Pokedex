@@ -1,4 +1,3 @@
-console.log('🥖🥖');
 let img1;
 let pokeinfo;
 class Pokemon{
@@ -16,7 +15,7 @@ class Pokemon{
 
   display(){
     pokeinfo = document.createElement("ol");
-    pokeinfo.innerHTML = [this.name,"HP: " + this.hp,"Attack: " + this.attack,"Defense: " + this.defense,"Abilities:" + this.ability];
+    pokeinfo.innerHTML = [this.name,"</br> " + "HP: " + this.hp,"</br> " + "Attack: " + this.attack,"</br> " + "Defense: " + this.defense,"</br> " + "Abilities:" + this.ability];
     img1 = document.createElement('img');
     this.element.appendChild(img1);
     img1.src = this.image;
@@ -24,11 +23,23 @@ class Pokemon{
     this.container.appendChild(this.element);
   }
 }
-//
-// class Trainer {
-//   get(all)
-// }
 
+class Trainer{
+  constructor(){
+    this.pokeData = [];
+  }
+
+  all(){
+    return this.pokeData;
+  }
+  get(name){
+    for(let i=0;i<this.pokeData.lengthl;i++){
+      if(name=== this.pokeData[i].name){
+        return this.pokeData[i];
+      }
+    }
+  }
+}
 
 function pika(){
   let pika ="http://fizal.me/pokeapi/api/v2/name/pikachu.json";
@@ -61,6 +72,7 @@ function pika(){
       document.body.style.backgroundImage = "url('https://free4kwallpapers.com/no-watermarks/originals/2015/07/23/pokemon-pikachu.jpg')";
       document.getElementById('mb').style.display = "none";
       document.getElementById('sb').style.display = "none";
+      document.getElementById('trainer').style.display = "none";
 
       pikk.display();
 
@@ -95,10 +107,11 @@ function mew(){
 
       let mew = new Pokemon(name,hp,attack,defense,concatenate,img);
 
-      document.body.style.backgroundImage = "url('https://free4kwallpapers.com/no-watermarks/originals/2015/08/22/pokemon-thread-amazing-pok-mon.jpg')";
+      document.body.style.backgroundImage = "url('http://www.biocenit.cat/mypics/11/117800/pokemon-mewtwo-wallpaper.png')";
 
       document.getElementById('pb').style.display = "none";
       document.getElementById('sb').style.display = "none";
+      document.getElementById('trainer').style.display = "none";
 
       mew.display();
     })
@@ -138,23 +151,54 @@ function snor(){
 
       document.getElementById('mb').style.display = "none";
       document.getElementById('pb').style.display = "none";
+      document.getElementById('trainer').style.display = "none";
 
       snor.display();
     })
 }
 
+let open1 = document.getElementById("pb");
+function changing1(){
+  if(open1.src === "https://ubisafe.org/images250_/pokeball-transparent-8-bit.png"){
+    open1.src ='https://ubisafe.org/images250_/pokeball-transparent-8-bit-6.png';
+    }
+  }
+
+  let open2 = document.getElementById("sb");
+  function changing2(){
+    if(open2.src === "https://ubisafe.org/images250_/pokeball-transparent-8-bit.png"){
+      open2.src ='https://ubisafe.org/images250_/pokeball-transparent-8-bit-6.png';
+      }
+    }
+
+let open = document.getElementById("mb");
+function changing(){
+  if(open.src === "https://ubisafe.org/images250_/pokeball-transparent-8-bit.png"){
+    open.src ='https://ubisafe.org/images250_/pokeball-transparent-8-bit-6.png';
+    }
+  }
+
+
   function main(){
       document.getElementById('pb').style.display = "initial";
       document.getElementById('mb').style.display = "initial";
       document.getElementById('sb').style.display = "initial";
+      open1.src = "https://ubisafe.org/images250_/pokeball-transparent-8-bit.png";
+      open2.src = "https://ubisafe.org/images250_/pokeball-transparent-8-bit.png";
+      open.src = "https://ubisafe.org/images250_/pokeball-transparent-8-bit.png";
+      document.getElementById('trainer').style.display = "initial";
       pokeinfo.style.display = "none";
       img1.style.display = "none";
       document.body.style.backgroundImage = "url('https://free4kwallpapers.com/no-watermarks/originals/2018/06/18/created-a-3d-render-of-a-pokemon-trophy-in-the-grass-wallpaper.jpg')";
   }
 
-    mb.addEventListener('click', mew);
-    mb.addEventListener("mouseleave", main);
-    sb.addEventListener('click', snor);
-    sb.addEventListener("mouseleave", main);
-    pb.addEventListener('click', pika);
-    pb.addEventListener("mouseleave", main);
+
+pb.addEventListener('click', changing1);
+sb.addEventListener('click', changing2);
+mb.addEventListener('click', changing);
+mb.addEventListener('click', mew);
+mb.addEventListener("mouseleave", main);
+sb.addEventListener('click', snor);
+sb.addEventListener("mouseleave", main);
+pb.addEventListener('click', pika);
+pb.addEventListener("mouseleave", main);
