@@ -10,6 +10,9 @@ h1{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+h6{
+  padding-bottom: 30px;
+}
 img{
   width:300px;
   height:300px;
@@ -25,8 +28,8 @@ button{
 }
 
 #pb{
-  margin-left: 20%;
-  margin-top:30%;
+  margin-left: 26%;
+  margin-top:20%;
   position: absolute;
   width:10vh;
   height:10vh;
@@ -34,8 +37,8 @@ button{
 }
 
 #sb{
-  margin-left: 40%;
-  margin-top:30%;
+  margin-left: 46%;
+  margin-top:20%;
   position: absolute;
   width:10vh;
   height:10vh;
@@ -43,8 +46,8 @@ button{
 }
 
 #mb{
-  margin-left: 60%;
-  margin-top:30%;
+  margin-left: 66%;
+  margin-top:20%;
   position: absolute;
   width:10vh;
   height:10vh;
@@ -57,8 +60,9 @@ button{
  }
 
  #trainer{
-   width:30vh;
-   height:30vh;
+   width:25vh;
+   height:25vh;
+
  }
 
  .pokeBall:hover{
@@ -84,3 +88,49 @@ button{
    transform: translate3d(4px, 0, 0);
  }
  }
+
+.product{
+  animation: fadeInDownBig;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInDownBig {
+   0% {
+      opacity: 0;
+      transform: translatex(-2000px);
+   }
+   100% {
+      opacity: 1;
+      transform: translatex(0);
+   }
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        width: 100%;
+    }
+    #trainer{
+      width:100px;
+      height:100px;
+    }
+
+    #pb{
+      width:50px;
+      height:50px;
+    }
+
+    #mb{
+      width:50px;
+      height:50px;
+    }
+
+    #sb{
+      width:50px;
+      height:50px;
+    }
+
+    backgroundImage{
+      background-size: contain;
+    }
+}
