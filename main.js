@@ -49,7 +49,7 @@ let starRider = new Trainer();
 
 let pikk;
 function pika(){
-  let pika ="http://fizal.me/pokeapi/api/v2/name/pikachu.json";
+  let pika ="https://fizal.me/pokeapi/api/v2/name/pikachu.json";
   axios.get(pika)
     .then(function(response){
 
@@ -90,7 +90,7 @@ function pika(){
 
 let mewt;
 function mew(){
-  let mew ="http://fizal.me/pokeapi/api/v2/name/mewtwo.json";
+  let mew ="https://fizal.me/pokeapi/api/v2/name/mewtwo.json";
     axios.get(mew)
     .then(function mew(response){
 
@@ -130,7 +130,7 @@ function mew(){
 
 let snorl;
 function snor(){
-  let snorlax ="http://fizal.me/pokeapi/api/v2/name/snorlax.json";
+  let snorlax ="https://fizal.me/pokeapi/api/v2/name/snorlax.json";
   axios.get(snorlax)
 
     .then(function snor(response){
